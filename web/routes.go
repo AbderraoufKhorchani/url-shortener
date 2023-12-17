@@ -1,7 +1,7 @@
 package web
 
 import (
-	//	_ "github.com/AbderraoufKhorchani/authentification-service/docs"
+	_ "github.com/AbderraoufKhorchani/url-shortener/docs"
 
 	"github.com/AbderraoufKhorchani/url-shortener/internal/handlers"
 	"github.com/gin-contrib/cors"
@@ -16,7 +16,7 @@ func Routes() *gin.Engine {
 
 	config := cors.DefaultConfig()
 	config.AllowOrigins = []string{"*"}
-	config.AllowMethods = []string{"POST"}
+	config.AllowMethods = []string{"POST", "GET"}
 	config.AllowHeaders = []string{"accept", "Authorization", "Content-Type", "X-CSRF-Token"}
 	config.ExposeHeaders = []string{"Link"}
 	config.AllowCredentials = true

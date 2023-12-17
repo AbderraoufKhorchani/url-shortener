@@ -1,0 +1,70 @@
+definitions:
+  handlers.RedirectResponse:
+    properties:
+      url:
+        type: string
+    type: object
+  handlers.playLoad:
+    properties:
+      url:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /{code}:
+    get:
+      consumes:
+      - application/json
+      description: Get the original URL based on the provided shortcode
+      parameters:
+      - description: Shortcode to be used for redirection
+        in: path
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Returns the original URL
+          schema:
+            $ref: '#/definitions/handlers.RedirectResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Get the original URL based on the provided shortcode
+      tags:
+      - URL Shortener
+  /generate:
+    post:
+      consumes:
+      - application/json
+      description: Save a URL and generate a shortcode
+      parameters:
+      - description: Request payload containing the URL
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.playLoad'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Returns the shortened URL
+          schema:
+            type: string
+        "400":
+          description: Bad Request - Invalid request payload
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Save a URL and generate a shortcode
+      tags:
+      - URL Shortener
+swagger: "2.0"

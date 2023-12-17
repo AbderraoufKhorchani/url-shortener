@@ -1,4 +1,4 @@
-# # URL Shortener
+# URL Shortener
 
 This Golang-based URL shortener service allows you to create shortened URLs and easily redirect users to the original links. It uses PostgreSQL as the backend database to store URL mappings. The service comes with Swagger annotations for a well-documented API, facilitating seamless integration into various applications.
 

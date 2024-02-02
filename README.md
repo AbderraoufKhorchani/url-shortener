@@ -22,7 +22,7 @@ To run this authentication service, ensure you have the following prerequisites 
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/AbderraoufKhorchani/url-shortener.git
+   git clone https://github.com/rf-krcn/url-shortener.git
    cd url-shortener
 ```
 2. Install dependencies:
